@@ -12639,7 +12639,8 @@ button::-moz-focus-inner {
     color: #ccc;
     font-size: 12px;
     line-height: 18px;
-    white-space: nowrap
+    white-space: nowrap;
+    direction: ltr;
 }
 
 .mfp-arrow {

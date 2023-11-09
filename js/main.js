@@ -86,7 +86,7 @@
         ))
     }
     ,
-    t(".th-menu-wrapper").thmobilemenu(),
+    t(".menu-wrapper").thmobilemenu(),
     t(window).scroll((function() {
         t(this).scrollTop() > 500 ? t(".sticky-wrapper").addClass("sticky") : t(".sticky-wrapper").removeClass("sticky")
     }
@@ -157,12 +157,6 @@
         }),
         t(this).addClass("bg-mask"),
         t(this).removeAttr("data-mask-src")
-    }
-    )),
-    t("[data-theme-color]").length > 0 && t("[data-theme-color]").each((function() {
-        var e = t(this).attr("data-theme-color");
-        t(this).get(0).style.setProperty("--theme-color", e),
-        t(this).removeAttr("data-theme-color")
     }
     )),
     t("[data-body-color]").length > 0 && t("[data-body-color]").each((function() {
@@ -401,14 +395,6 @@
         mainClass: "mfp-zoom-in",
         removalDelay: 260
     }),
-    t(".popup-content").magnificPopup({
-        type: "inline",
-        midClick: !0
-    }),
-    t(".popup-content").on("click", (function() {
-        t(".slick-slider").slick("refresh")
-    }
-    )),
     t.fn.sectionPosition = function(e, a) {
         t(this).each((function() {
             var s, i, n, o, r, c = t(this);
@@ -478,32 +464,10 @@
     t("[data-sec-pos]").length && t("[data-sec-pos]").imagesLoaded((function() {
         t("[data-sec-pos]").sectionPosition("data-sec-pos", "data-pos-for")
     }
-    )),
-    t(".filter-active").imagesLoaded((function() {
-        if (t(".filter-active").length > 0) {
-            var e = t(".filter-active").isotope({
-                itemSelector: ".filter-item",
-                filter: "*",
-                masonry: {
-                    columnWidth: 1
-                }
-            });
-            t(".filter-menu-active").on("click", "button", (function() {
-                var a = t(this).attr("data-filter");
-                e.isotope({
-                    filter: a
-                })
-            }
-            )),
-            t(".filter-menu-active").on("click", "button", (function(e) {
-                e.preventDefault(),
-                t(this).addClass("active"),
-                t(this).siblings(".active").removeClass("active")
-            }
-            ))
-        }
-    }
-    )),
+    )),t(".counter-number").counterUp({
+        delay: 10,
+        time: 1e3
+    }),
     t(".masonary-active").imagesLoaded((function() {
         t(".masonary-active").length > 0 && t(".masonary-active").isotope({
             itemSelector: ".filter-item",
@@ -514,85 +478,6 @@
         })
     }
     )),
-    t(".masonary-active, .woocommerce-Reviews .comment-list").imagesLoaded((function() {
-        var e = ".masonary-active, .woocommerce-Reviews .comment-list";
-        t(e).length > 0 && t(e).isotope({
-            itemSelector: ".filter-item, .woocommerce-Reviews .comment-list li",
-            filter: "*",
-            masonry: {
-                columnWidth: 1
-            }
-        }),
-        t('[data-bs-toggle="tab"]').on("shown.bs.tab", (function(a) {
-            t(e).isotope({
-                filter: "*"
-            })
-        }
-        ))
-    }
-    )),
-    t(".counter-number").counterUp({
-        delay: 10,
-        time: 1e3
-    }),
-    t.fn.thTab = function(e) {
-        var a = t.extend({
-            sliderTab: !1,
-            tabButton: "button"
-        }, e);
-        t(this).each((function() {
-            var e = t(this)
-              , s = e.find(a.tabButton);
-            e.append('<span class="indicator"></span>');
-            var i = e.find(".indicator");
-            if (s.on("click", (function(e) {
-                e.preventDefault();
-                var s = t(this);
-                s.addClass("active").siblings().removeClass("active"),
-                a.sliderTab ? t(n).slick("slickGoTo", s.data("slide-go-to")) : r()
-            }
-            )),
-            a.sliderTab) {
-                var n = e.data("asnavfor")
-                  , o = 0;
-                s.each((function() {
-                    var s = t(this);
-                    s.attr("data-slide-go-to", o),
-                    o++,
-                    s.hasClass("active") && t(n).slick("slickGoTo", s.data("slide-go-to")),
-                    t(n).on("beforeChange", (function(t, s, i, n) {
-                        e.find(a.tabButton + '[data-slide-go-to="' + n + '"]').addClass("active").siblings().removeClass("active"),
-                        r()
-                    }
-                    ))
-                }
-                ))
-            }
-            function r() {
-                var n = e.find(a.tabButton + ".active")
-                  , o = n.css("height")
-                  , r = n.css("width")
-                  , c = n.position().top + "px"
-                  , l = n.position().left + "px";
-                i.get(0).style.setProperty("--height-set", o),
-                i.get(0).style.setProperty("--width-set", r),
-                i.get(0).style.setProperty("--pos-y", c),
-                i.get(0).style.setProperty("--pos-x", l),
-                t(s).first().position().left == n.position().left ? i.addClass("start").removeClass("center").removeClass("end") : t(s).last().position().left == n.position().left ? i.addClass("end").removeClass("center").removeClass("start") : i.addClass("center").removeClass("start").removeClass("end")
-            }
-            r()
-        }
-        ))
-    }
-    ,
-    t(".testi-card2-tab").length && t(".testi-card2-tab").thTab({
-        sliderTab: !0,
-        tabButton: ".tab-btn"
-    }),
-    t(".service-block-tab").length && t(".service-block-tab").thTab({
-        sliderTab: !0,
-        tabButton: ".tab-btn"
-    }),
     t.fn.shapeMockup = function() {
         t(this).each((function() {
             var e = t(this)
@@ -674,45 +559,7 @@
     ,
     t(".indicator-active").length && t(".indicator-active").indicator(),
     f(),
-    t(window).scroll(f),
-    t("#ship-to-different-address-checkbox").on("change", (function() {
-        t(this).is(":checked") ? t("#ship-to-different-address").next(".shipping_address").slideDown() : t("#ship-to-different-address").next(".shipping_address").slideUp()
-    }
-    )),
-    t(".woocommerce-form-login-toggle a").on("click", (function(e) {
-        e.preventDefault(),
-        t(".woocommerce-form-login").slideToggle()
-    }
-    )),
-    t(".woocommerce-form-coupon-toggle a").on("click", (function(e) {
-        e.preventDefault(),
-        t(".woocommerce-form-coupon").slideToggle()
-    }
-    )),
-    t(".shipping-calculator-button").on("click", (function(e) {
-        e.preventDefault(),
-        t(this).next(".shipping-calculator-form").slideToggle()
-    }
-    )),
-    t('.wc_payment_methods input[type="radio"]:checked').siblings(".payment_box").show(),
-    t('.wc_payment_methods input[type="radio"]').each((function() {
-        t(this).on("change", (function() {
-            t(".payment_box").slideUp(),
-            t(this).siblings(".payment_box").slideDown()
-        }
-        ))
-    }
-    )),
-    t(".rating-select .stars a").each((function() {
-        t(this).on("click", (function(e) {
-            e.preventDefault(),
-            t(this).siblings().removeClass("active"),
-            t(this).parent().parent().addClass("selected"),
-            t(this).addClass("active")
-        }
-        ))
-    }
-    ));
+    t(window).scroll(f);
     const m = {};
     function g() {
         const e = t(this)
@@ -755,72 +602,6 @@
     }
     ,
     t(".svg-img").inlineSvg(),
-    t(".quantity-plus").each((function() {
-        t(this).on("click", (function(e) {
-            e.preventDefault();
-            var a = t(this).siblings(".qty-input")
-              , s = parseInt(a.val(), 10);
-            isNaN(s) || a.val(s + 1)
-        }
-        ))
-    }
-    )),
-    t(".quantity-minus").each((function() {
-        t(this).on("click", (function(e) {
-            e.preventDefault();
-            var a = t(this).siblings(".qty-input")
-              , s = parseInt(a.val(), 10);
-            !isNaN(s) && s > 1 && a.val(s - 1)
-        }
-        ))
-    }
-    )),
-    t("#testiSlide1").slick({
-        centerMode: !0,
-        centerPadding: "600px",
-        slidesToShow: 1,
-        arrows: !1,
-        dots: !0,
-        responsive: [{
-            breakpoint: 1800,
-            settings: {
-                centerPadding: "300px"
-            }
-        }, {
-            breakpoint: 1199,
-            settings: {
-                centerPadding: "200px"
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                centerPadding: "60px"
-            }
-        }, {
-            breakpoint: 600,
-            settings: {
-                centerPadding: "0px"
-            }
-        }]
-    }),
-    t(document).on("mouseover", ".team-card-1-1", (function() {
-        t(this).addClass("team-card-1-1-active"),
-        t(".team-card-1-1").removeClass("team-card-1-1-active"),
-        t(this).addClass("team-card-1-1-active")
-    }
-    )),
-    t(document).on("mouseover", ".team-card-1-2", (function() {
-        t(this).addClass("team-card-1-2-active"),
-        t(".team-card-1-2").removeClass("team-card-1-2-active"),
-        t(this).addClass("team-card-1-2-active")
-    }
-    )),
-    t(document).on("mouseover", ".service-card2", (function() {
-        t(this).addClass("service-card2-active"),
-        t(".service-card2").removeClass("service-card2-active"),
-        t(this).addClass("service-card2-active")
-    }
-    )),
     t(document).on("mouseover", ".cat-card2", (function() {
         t(this).addClass("cat-card2-active"),
         t(".cat-card2").removeClass("cat-card2-active"),
