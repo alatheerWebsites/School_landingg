@@ -382,14 +382,186 @@
         }
         ))
     }(".sidemenu-wrapper", ".sideMenuToggler", ".sideMenuCls", "show"),
-    t(".popup-image").magnificPopup({
-        type: "image",
+    t("#popup-image").magnificPopup({
         mainClass: "mfp-zoom-in",
         removalDelay: 260,
-        gallery: {
-            enabled: !0
-        }
-    }),
+        items: [
+            {
+              src: 'images/hero/gallery.jpg',
+              title: 'فعاليات الأسبوع التمهيدي'
+            },
+            {
+              src: 'images/hero/popup-image.jpg',
+              title: 'فعاليات الأسبوع التمهيدي'
+            },
+            {
+              src: 'images/hero/popup-image-1.jpg',
+              title: 'فعاليات الأسبوع التمهيدي'
+            },
+            {
+              src: 'images/hero/popup-image-2.jpg', 
+              title: 'فعاليات الأسبوع التمهيدي'
+            },
+            {
+              src: 'images/hero/popup-image-3.jpg', 
+              title: 'فعاليات الأسبوع التمهيدي'
+            }
+          ],
+          gallery: {
+            enabled: true
+          },
+          type: 'image' 
+    }), 
+    t("#popup-image-1").magnificPopup({
+        mainClass: "mfp-zoom-in",
+        removalDelay: 260,
+        items: [
+            {
+              src: 'images/hero/modal-2.jpg',
+              title: 'يوم فى حب اللغة العربية'
+            },
+            {
+              src: 'images/hero/modal-2-1.jpg',
+              title: 'يوم فى حب اللغة العربية'
+            },
+            {
+              src: 'images/hero/modal-2-2.jpg',
+              title: 'يوم فى حب اللغة العربية'
+            },
+            {
+              src: 'images/hero/modal-2-3.jpg', 
+              title: 'يوم فى حب اللغة العربية'
+            },
+            {
+              src: 'images/hero/modal-2-4.jpg', 
+              title: 'يوم فى حب اللغة العربية'
+            }
+          ],
+          gallery: {
+            enabled: true
+          },
+          type: 'image' 
+    }), 
+    t("#popup-image-2").magnificPopup({
+        mainClass: "mfp-zoom-in",
+        removalDelay: 260,
+        items: [
+            {
+              src: 'images/hero/hero_bg_1_1.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_2.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_3.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-7.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-6.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            }
+          ],
+          gallery: {
+            enabled: true
+          },
+          type: 'image' 
+    }), 
+    t("#popup-image-3").magnificPopup({
+        mainClass: "mfp-zoom-in",
+        removalDelay: 260,
+        items: [
+            {
+              src: 'images/hero/hero_bg_1_1.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_2.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_3.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-7.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-6.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            }
+          ],
+          gallery: {
+            enabled: true
+          },
+          type: 'image' 
+    }), 
+    t("#popup-image-4").magnificPopup({
+        mainClass: "mfp-zoom-in",
+        removalDelay: 260,
+        items: [
+            {
+              src: 'images/hero/hero_bg_1_1.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_2.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_3.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-7.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-6.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            }
+          ],
+          gallery: {
+            enabled: true
+          },
+          type: 'image' 
+    }), 
+    t("#popup-image-5").magnificPopup({
+        mainClass: "mfp-zoom-in",
+        removalDelay: 260,
+        items: [
+            {
+              src: 'images/hero/hero_bg_1_1.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_2.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/hero_bg_1_3.jpg',
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-7.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            },
+            {
+              src: 'images/hero/gallery-6.jpg', 
+              title: 'مدارس المجد الجديد الأهلية'
+            }
+          ],
+          gallery: {
+            enabled: true
+          },
+          type: 'image' 
+    }), 
     t(".popup-video").magnificPopup({
         type: "iframe",
         mainClass: "mfp-zoom-in",

@@ -12635,7 +12635,7 @@ button::-moz-focus-inner {
 .mfp-counter {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     color: #ccc;
     font-size: 12px;
     line-height: 18px;
@@ -12798,11 +12798,11 @@ img.mfp-img {
 }
 
 .mfp-title {
-    text-align: left;
+    text-align: right;
     line-height: 18px;
     color: #f3f3f3;
     word-wrap: break-word;
-    padding-right: 36px
+    padding-left: 36px
 }
 
 .mfp-image-holder .mfp-content {
